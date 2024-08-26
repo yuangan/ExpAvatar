@@ -5,6 +5,7 @@
 </div>
 
 # TODO:
+- [ ] Environment setup
 - [ ] Release the inference code of ExpAvatar.
 - [ ] Release the metrics calculation of ExpAvatar.
 - [ ] Release the processed data.
