@@ -13,7 +13,7 @@ conda create -n expavatar_fpdiff python=3.8
 conda activate expavatar_fpdiff
 conda install pytorch=1.11 cudatoolkit=11.3 torchvision -c pytorch
 conda install mpi4py dlib scikit-learn scikit-image tqdm -c conda-forge
-pip install lmdb opencv-python kornia yacs blobfile chumpy face_alignment
+pip install lmdb opencv-python kornia yacs blobfile chumpy face-alignment==1.3.4
 ```
 
 You need to also install [pytorch3d](https://github.com/facebookresearch/pytorch3d) to render the physical buffers:
