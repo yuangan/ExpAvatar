@@ -30,3 +30,7 @@ pip install --no-index --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.co
 - [ ] Release the processed data.
 - [ ] Release the training code of ExpAvatar Step I.
 - [ ] Release the training code of ExpAvatar Step II.
+
+# Acknowledge
+We acknowledge these works for their public code: [DiffusionRig](https://github.com/adobe-research/diffusion-rig), [INSTA](https://github.com/Zielon/INSTA-pytorch), [MICA's face tracker](https://github.com/Zielon/metrical-tracker), [IMavatar](https://github.com/zhengyuf/IMavatar), [PointAvatar](https://github.com/zhengyuf/PointAvatar).
+
