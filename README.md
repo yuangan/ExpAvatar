@@ -14,13 +14,24 @@ conda activate expavatar_fpdiff
 conda install pytorch=1.11 cudatoolkit=11.3 torchvision -c pytorch
 conda install mpi4py dlib scikit-learn scikit-image tqdm -c conda-forge
 pip install lmdb opencv-python kornia yacs blobfile chumpy face-alignment==1.3.4 pandas lpips
-```
-
-You need to also install [pytorch3d](https://github.com/facebookresearch/pytorch3d) to render the physical buffers:
-
-```bash
 conda install -c fvcore -c iopath -c conda-forge fvcore iopath
 pip install --no-index --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py38_cu113_pyt1110/download.html
+```
+
+### Download Dataset
+
+Download the demo dataset from [Yandex](https://disk.yandex.com/d/pxGuaG5_ehsWyQ), and then unzip them with:
+
+```bash 
+unzip ExpAvatar.zip -d ./
+cd ./ExpAvatar/stepII/
+unzip baselines.zip -d ./baselines
+```
+
+### Run Inference
+Run inference in `./ExpAvatar/stepII/`
+```bash
+bash inference.sh
 ```
 
 # TODO:
