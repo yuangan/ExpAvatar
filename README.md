@@ -20,9 +20,14 @@ pip install --no-index --no-cache-dir pytorch3d -f https://dl.fbaipublicfiles.co
 
 ### Download Dataset
 
-Download the demo dataset from [Yandex](https://disk.yandex.com/d/pxGuaG5_ehsWyQ), and then unzip them with:
-
-```bash 
+Download the demo dataset from [Yandex](https://disk.yandex.com/d/pxGuaG5_ehsWyQ), and organize it like:
+```
+----./
+  |-ExpAvatar
+  |-ExpAvatar.zip
+```
+then unzip them with:
+```bash
 unzip ExpAvatar.zip -d ./
 cd ./ExpAvatar/stepII/
 unzip baselines.zip -d ./baselines
