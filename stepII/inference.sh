@@ -30,8 +30,7 @@ function get_num_test {
     echo $num_test
 }
 
-source /home/gy/anaconda3/bin/activate expavatar_fpdiff
-#source /home/gy/anaconda3/bin/activate diffusionrig
+source activate expavatar_fpdiff
 
 testep=40000 #$1
 num_train=200 #$2
@@ -47,7 +46,7 @@ subject='yufeng'
 num_test=$(get_num_test $subject)
 # inference
 CUDA_VISIBLE_DEVICES=$gpu python scripts/inference_mica_0_insta_conv_wobody_instanoise.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --modes exp --model_path ./log/${subject}_${suffix}_wobody_${num_train}/model0${testep}.pt --timestep_respacing ddim20 --subjectname $subject --length $num_test
-CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ../../diffusionrig/baselines/${subject}/test/ >> res_instanoise_${gpu}
+CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ./baselines/${subject}/test/ >> res_instanoise_${gpu}
 echo ${suffix}_${testep}_wobody_instanoise_${num_train}>> res_instanoise_${gpu}
 echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 
@@ -56,7 +55,7 @@ echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 # num_test=$(get_num_test $subject)
 # # inference
 # CUDA_VISIBLE_DEVICES=$gpu python scripts/inference_mica_0_insta_conv_wobody_instanoise.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --modes exp --model_path ./log/${subject}_${suffix}_wobody_${num_train}/model0${testep}.pt --timestep_respacing ddim20 --subjectname $subject --length $num_test
-# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ../diffusionrig/baselines/${subject}/test/ >> res_instanoise_${gpu}
+# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ./baselines/${subject}/test/ >> res_instanoise_${gpu}
 # echo ${suffix}_${testep}_wobody_instanoise_${num_train}>> res_instanoise_${gpu}
 # echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 
@@ -66,7 +65,7 @@ echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 # num_test=$(get_num_test $subject)
 # # inference
 # CUDA_VISIBLE_DEVICES=$gpu python scripts/inference_mica_0_insta_conv_wobody_instanoise.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --modes exp --model_path ./log/${subject}_${suffix}_wobody_${num_train}/model0${testep}.pt --timestep_respacing ddim20 --subjectname $subject --length $num_test
-# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ../diffusionrig/baselines/${subject}/test/ >> res_instanoise_${gpu}
+# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ./baselines/${subject}/test/ >> res_instanoise_${gpu}
 # echo ${suffix}_${testep}_wobody_instanoise_${num_train}>> res_instanoise_${gpu}
 # echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 
@@ -74,7 +73,7 @@ echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 # num_test=$(get_num_test $subject)
 # # inference
 # CUDA_VISIBLE_DEVICES=$gpu python scripts/inference_mica_0_insta_conv_wobody_instanoise.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --modes exp --model_path ./log/${subject}_${suffix}_wobody_${num_train}/model0${testep}.pt --timestep_respacing ddim20 --subjectname $subject --length $num_test
-# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ../diffusionrig/baselines/${subject}/test/ >> res_instanoise_${gpu}
+# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ./baselines/${subject}/test/ >> res_instanoise_${gpu}
 # echo ${suffix}_${testep}_wobody_instanoise_${num_train}>> res_instanoise_${gpu}
 # echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 
@@ -83,7 +82,7 @@ echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 # num_test=$(get_num_test $subject)
 # # inference
 # CUDA_VISIBLE_DEVICES=$gpu python scripts/inference_mica_0_insta_conv_wobody_instanoise.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --modes exp --model_path ./log/${subject}_${suffix}_wobody_${num_train}/model0${testep}.pt --timestep_respacing ddim20 --subjectname $subject --length $num_test
-# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ../diffusionrig/baselines/${subject}/test/ >> res_instanoise_${gpu}
+# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ./baselines/${subject}/test/ >> res_instanoise_${gpu}
 # echo ${suffix}_${testep}_wobody_instanoise_${num_train}>> res_instanoise_${gpu}
 # echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 
@@ -93,7 +92,7 @@ echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 # num_test=$(get_num_test $subject)
 # # inference
 # CUDA_VISIBLE_DEVICES=$gpu python scripts/inference_mica_0_insta_conv_wobody_instanoise.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --modes exp --model_path ./log/${subject}_${suffix}_wobody_${num_train}/model0${testep}.pt --timestep_respacing ddim20 --subjectname $subject --length $num_test
-# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ../diffusionrig/baselines/${subject}/test/ >> res_instanoise_${gpu}
+# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ./baselines/${subject}/test/ >> res_instanoise_${gpu}
 # echo ${suffix}_${testep}_wobody_instanoise_${num_train}>> res_instanoise_${gpu}
 # echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 
@@ -101,7 +100,7 @@ echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 # num_test=$(get_num_test $subject)
 # # inference
 # CUDA_VISIBLE_DEVICES=$gpu python scripts/inference_mica_0_insta_conv_wobody_instanoise.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --modes exp --model_path ./log/${subject}_${suffix}_wobody_${num_train}/model0${testep}.pt --timestep_respacing ddim20 --subjectname $subject --length $num_test
-# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ../diffusionrig/baselines/${subject}/test/ >> res_instanoise_${gpu}
+# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ./baselines/${subject}/test/ >> res_instanoise_${gpu}
 # echo ${suffix}_${testep}_wobody_instanoise_${num_train}>> res_instanoise_${gpu}
 # echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 
@@ -110,7 +109,7 @@ echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 # num_test=$(get_num_test $subject)
 # # inference
 # CUDA_VISIBLE_DEVICES=$gpu python scripts/inference_mica_0_insta_conv_wobody_instanoise.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --modes exp --model_path ./log/${subject}_${suffix}_wobody_${num_train}/model0${testep}.pt --timestep_respacing ddim20 --subjectname $subject --length $num_test
-# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ../diffusionrig/baselines/${subject}/test/ >> res_instanoise_${gpu}
+# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ./baselines/${subject}/test/ >> res_instanoise_${gpu}
 # echo ${suffix}_${testep}_wobody_instanoise_${num_train}>> res_instanoise_${gpu}
 # echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 
@@ -120,7 +119,7 @@ echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 # num_test=$(get_num_test $subject)
 # # inference
 # CUDA_VISIBLE_DEVICES=$gpu python scripts/inference_mica_0_insta_conv_wobody_instanoise.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --modes exp --model_path ./log/${subject}_${suffix}_wobody_${num_train}/model0${testep}.pt --timestep_respacing ddim20 --subjectname $subject --length $num_test
-# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ../diffusionrig/baselines/${subject}/test/ >> res_instanoise_${gpu}
+# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ./baselines/${subject}/test/ >> res_instanoise_${gpu}
 # echo ${suffix}_${testep}_wobody_instanoise_${num_train}>> res_instanoise_${gpu}
 # echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 
@@ -128,7 +127,7 @@ echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 # num_test=$(get_num_test $subject)
 # # inference
 # CUDA_VISIBLE_DEVICES=$gpu python scripts/inference_mica_0_insta_conv_wobody_instanoise.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --modes exp --model_path ./log/${subject}_${suffix}_wobody_${num_train}/model0${testep}.pt --timestep_respacing ddim20 --subjectname $subject --length $num_test
-# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ../diffusionrig/baselines/${subject}/test/ >> res_instanoise_${gpu}
+# CUDA_VISIBLE_DEVICES=$gpu python calculate_metrics_imavatar_256_est2Dlmk.py --output_dir ./results/${subject}_${suffix}_${testep}_wobody_instanoise_${num_train}/ --gt_dir ./baselines/${subject}/test/ >> res_instanoise_${gpu}
 # echo ${suffix}_${testep}_wobody_instanoise_${num_train}>> res_instanoise_${gpu}
 # echo "The num_test for $subject is $num_test" >> res_instanoise_${gpu}
 
