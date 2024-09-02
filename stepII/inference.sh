@@ -34,7 +34,7 @@ source activate expavatar_fpdiff
 
 testep=40000 #$1
 num_train=200 #$2
-gpu=3 #$3
+gpu=0 #$3
 suffix='instaconv1_conf_s1ft_256'
 
 if [ $num_train -gt 99 ]; then
