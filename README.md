@@ -5,6 +5,7 @@
 </div>
 
 ## Setup & Preparation
+Refer to our [colab](https://colab.research.google.com/drive/1KFyzW2Zd1OfCHOmNuusFtHKyGhrgWJKO#scrollTo=vP74O9PCs_wF) for a quick inference validation.
 
 ### Environment Setup
 
@@ -40,8 +41,8 @@ bash inference.sh
 ```
 
 # TODO:
-- [ ] Environment setup
-- [ ] Release the inference code of ExpAvatar.
+- [x] Environment setup
+- [x] Release the inference code of ExpAvatar.
 - [ ] Release the metrics calculation of ExpAvatar.
 - [ ] Release the processed data.
 - [ ] Release the training code of ExpAvatar Step I.
